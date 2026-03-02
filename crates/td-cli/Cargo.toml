@@ -1,0 +1,31 @@
+[package]
+name = "td-cli"
+description = "Todoist CLI - fast, offline-capable task management"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+default-run = "td"
+
+[[bin]]
+name = "td"
+path = "src/main.rs"
+
+[dependencies]
+td-api = { workspace = true }
+td-cache = { workspace = true }
+clap = { workspace = true }
+clap_complete = { workspace = true }
+tokio = { workspace = true }
+anyhow = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+colored = { workspace = true }
+comfy-table = { workspace = true }
+indicatif = { workspace = true }
+dialoguer = { workspace = true }
+toml = { workspace = true }
+directories = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+chrono = { workspace = true }
+atty = "0.2.14"

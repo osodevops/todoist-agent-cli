@@ -1,0 +1,12 @@
+[package]
+name = "xtask"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+publish = false
+
+[dependencies]
+td-cli = { path = "../crates/td-cli" }
+clap = { workspace = true }
+clap_mangen = { workspace = true }
+clap_complete = { workspace = true }
