@@ -80,9 +80,9 @@ mod tests {
     fn sample_task_json() -> serde_json::Value {
         serde_json::json!({
             "id": "abc123",
-            "projectId": "proj1",
-            "sectionId": null,
-            "parentId": null,
+            "project_id": "proj1",
+            "section_id": null,
+            "parent_id": null,
             "content": "Buy milk",
             "description": "",
             "priority": 4,
@@ -91,12 +91,12 @@ mod tests {
             "duration": null,
             "labels": [],
             "order": 1,
-            "assigneeId": null,
-            "assignerId": null,
-            "isCompleted": false,
-            "createdAt": "2026-03-01T10:00:00Z",
-            "updatedAt": null,
-            "completedAt": null,
+            "assignee_id": null,
+            "assigner_id": null,
+            "is_completed": false,
+            "created_at": "2026-03-01T10:00:00Z",
+            "updated_at": null,
+            "completed_at": null,
             "url": "https://app.todoist.com/app/task/abc123"
         })
     }
@@ -126,7 +126,7 @@ mod tests {
             .and(path("/tasks"))
             .respond_with(ResponseTemplate::new(200).set_body_json(serde_json::json!({
                 "results": [sample_task_json()],
-                "nextCursor": null
+                "next_cursor": null
             })))
             .mount(&server)
             .await;
@@ -266,7 +266,7 @@ mod tests {
             .and(path("/tasks"))
             .respond_with(ResponseTemplate::new(200).set_body_json(serde_json::json!({
                 "results": [sample_task_json()],
-                "nextCursor": "cursor_abc"
+                "next_cursor": "cursor_abc"
             })))
             .up_to_n_times(1)
             .mount(&server)
@@ -278,7 +278,7 @@ mod tests {
             .and(query_param("cursor", "cursor_abc"))
             .respond_with(ResponseTemplate::new(200).set_body_json(serde_json::json!({
                 "results": [sample_task_json()],
-                "nextCursor": null
+                "next_cursor": null
             })))
             .mount(&server)
             .await;

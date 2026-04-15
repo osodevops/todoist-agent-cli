@@ -1,7 +1,6 @@
 use serde::Serialize;
 
 #[derive(Debug, Serialize)]
-#[serde(rename_all = "camelCase")]
 pub struct CreateCommentRequest {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub task_id: Option<String>,
@@ -11,7 +10,6 @@ pub struct CreateCommentRequest {
 }
 
 #[derive(Debug, Serialize)]
-#[serde(rename_all = "camelCase")]
 pub struct UpdateCommentRequest {
     pub content: String,
 }

@@ -1,7 +1,6 @@
 use serde::Serialize;
 
 #[derive(Debug, Serialize)]
-#[serde(rename_all = "camelCase")]
 pub struct CreateFilterRequest {
     pub name: String,
     pub query: String,
@@ -14,7 +13,6 @@ pub struct CreateFilterRequest {
 }
 
 #[derive(Debug, Default, Serialize)]
-#[serde(rename_all = "camelCase")]
 pub struct UpdateFilterRequest {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
