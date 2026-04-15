@@ -5,7 +5,7 @@ use crate::requests::comments::*;
 
 impl TodoistClient {
     pub async fn get_comments_for_task(&self, task_id: &str) -> Result<Vec<Comment>, ApiError> {
-        let query = [("taskId", task_id)];
+        let query = [("task_id", task_id)];
         self.get_with_query("/comments", &query).await
     }
 
@@ -13,7 +13,7 @@ impl TodoistClient {
         &self,
         project_id: &str,
     ) -> Result<Vec<Comment>, ApiError> {
-        let query = [("projectId", project_id)];
+        let query = [("project_id", project_id)];
         self.get_with_query("/comments", &query).await
     }
 

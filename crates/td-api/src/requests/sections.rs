@@ -1,7 +1,6 @@
 use serde::Serialize;
 
 #[derive(Debug, Serialize)]
-#[serde(rename_all = "camelCase")]
 pub struct CreateSectionRequest {
     pub name: String,
     pub project_id: String,
@@ -10,7 +9,6 @@ pub struct CreateSectionRequest {
 }
 
 #[derive(Debug, Default, Serialize)]
-#[serde(rename_all = "camelCase")]
 pub struct UpdateSectionRequest {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,

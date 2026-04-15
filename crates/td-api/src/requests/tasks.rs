@@ -1,7 +1,6 @@
 use serde::Serialize;
 
 #[derive(Debug, Default, Serialize)]
-#[serde(rename_all = "camelCase")]
 pub struct CreateTaskRequest {
     pub content: String,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -39,7 +38,6 @@ pub struct CreateTaskRequest {
 }
 
 #[derive(Debug, Default, Serialize)]
-#[serde(rename_all = "camelCase")]
 pub struct UpdateTaskRequest {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub content: Option<String>,
@@ -70,7 +68,6 @@ pub struct UpdateTaskRequest {
 }
 
 #[derive(Debug, Serialize)]
-#[serde(rename_all = "camelCase")]
 pub struct MoveTaskRequest {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub project_id: Option<String>,
@@ -81,13 +78,11 @@ pub struct MoveTaskRequest {
 }
 
 #[derive(Debug, Serialize)]
-#[serde(rename_all = "camelCase")]
 pub struct QuickAddRequest {
     pub text: String,
 }
 
 #[derive(Debug, Default, Serialize)]
-#[serde(rename_all = "camelCase")]
 pub struct GetTasksQuery {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub project_id: Option<String>,
